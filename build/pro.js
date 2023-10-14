@@ -28,6 +28,13 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        exclude: /node_modules/, //排除内容不解析
+        use: {
+          loader: "babel-loader",
+        },
+      },
+      {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
       },
@@ -74,7 +81,7 @@ module.exports = {
         generator: {
           filename: 'static/medias/[name][ext]'
         }
-      }
+      },
       //字体
       {
         test: /.(woff2|eot|ttf|otf)$/,
