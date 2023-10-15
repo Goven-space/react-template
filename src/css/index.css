@@ -1,7 +1,7 @@
 .demo-css {
     width: 100vw;
     height: 100px;
-    background-color: orangered;
+    background-color: red;
     display: flex;
     justify-content: center;
     align-items: center;

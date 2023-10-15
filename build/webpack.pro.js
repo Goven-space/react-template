@@ -25,10 +25,20 @@ module.exports = {
     filename: "[name].[hash:8].js",
     path: path.resolve(__dirname, "../dist"), // 打包后的目录
   },
+  devServer: {
+    // 开启 HMR 特性
+    hot: true,
+  },
+  resolve: {
+    extensions: [ '.jsx', '.js'], // 如使用Ts测加上'.tsx', '.ts'
+    alias: {
+      "@": path.join(__dirname, '../src')
+    },
+  },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/, //排除内容不解析
         use: {
           loader: "babel-loader",
